@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Dashboard</title>
-<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/admin-dashboard.css">
 </head>
 
 <body>
@@ -13,29 +13,189 @@
 
     <h2>Admin Panel</h2>
 
-    <a href="#">Users</a>
-    <a href="#">Trades Monitor</a>
-    <a href="#">Risk Engine</a>
-    <a href="#">System Logs</a>
-    <a href="#">Analytics</a>
+    <a href="#" onclick="showSection('dashboard')">Dashboard</a>
+    <a href="#" onclick="showSection('users')">Users</a>
+    <a href="#" onclick="showSection('trades')">Trades Monitor</a>
+    <a href="#" onclick="showSection('risk')">Risk Engine</a>
+    <a href="#" onclick="showSection('logs')">System Logs</a>
+    <a href="#" onclick="showSection('analytics')">Analytics</a>
 
     <button onclick="logout()">Logout</button>
 </div>
+
+<!-- ======== -->
 
 <div class="main">
 
     <h1>Admin Control Center ⚙️</h1>
 
+
+    <!-- DASHBOARD -->
+<div class="content active" id="dashboard">
+
+    <!-- TOP STATS -->
     <div class="card-grid">
 
-        <div class="card">Active Users<br><strong>1,248</strong></div>
-        <div class="card">System Latency<br><strong>0.31ms</strong></div>
-        <div class="card">Trades/sec<br><strong>4,820</strong></div>
+        <div class="card">
+            💰 Total Balance<br>
+            <strong>$12,450.32</strong>
+        </div>
+
+        <div class="card">
+            📈 Today Profit<br>
+            <strong style="color:#2ecc71;">+$320.45</strong>
+        </div>
+
+        <div class="card">
+            📉 Today Loss<br>
+            <strong style="color:#e74c3c;">-$120.10</strong>
+        </div>
+
+        <div class="card">
+            ⚡ Active Trades<br>
+            <strong>18</strong>
+        </div>
+
+    </div>
+
+    <!-- MARKET OVERVIEW -->
+    <div class="section-box">
+        <h2>📊 Market Overview</h2>
+
+        <div class="card-grid">
+
+            <div class="card">
+                BTC / USD<br>
+                <strong>$64,230</strong>
+                <p style="color:#2ecc71;">+2.4%</p>
+            </div>
+
+            <div class="card">
+                ETH / USD<br>
+                <strong>$3,120</strong>
+                <p style="color:#e74c3c;">-1.2%</p>
+            </div>
+
+            <div class="card">
+                SOL / USD<br>
+                <strong>$142</strong>
+                <p style="color:#2ecc71;">+5.1%</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ACTIVE TRADES TABLE -->
+    <div class="section-box">
+
+        <h2>⚡ Active Trades</h2>
+
+        <table class="trade-table">
+            <tr>
+                <th>Asset</th>
+                <th>Type</th>
+                <th>Entry</th>
+                <th>Current</th>
+                <th>P/L</th>
+            </tr>
+
+            <tr>
+                <td>BTC/USD</td>
+                <td>BUY</td>
+                <td>$63,000</td>
+                <td>$64,230</td>
+                <td style="color:#2ecc71;">+$1,230</td>
+            </tr>
+
+            <tr>
+                <td>ETH/USD</td>
+                <td>SELL</td>
+                <td>$3,200</td>
+                <td>$3,120</td>
+                <td style="color:#2ecc71;">+$80</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- RISK + ACTIVITY -->
+    <div class="grid-2">
+
+        <div class="section-box">
+            <h2>🧠 Risk Level</h2>
+            <p>Current system exposure is moderate.</p>
+
+            <div class="risk-bar">
+                <div class="risk-fill"></div>
+            </div>
+
+            <p>Risk: <strong>42%</strong></p>
+        </div>
+
+        <div class="section-box">
+            <h2>🔔 Recent Activity</h2>
+
+            <ul class="activity">
+                <li>✔ BTC trade executed successfully</li>
+                <li>✔ User login detected</li>
+                <li>⚠ High volatility detected in ETH</li>
+                <li>✔ Profit booked: +$320</li>
+            </ul>
+
+        </div>
 
     </div>
 
 </div>
 
-<script src="js/dashboard.js"></script>
+    <!-- USERS -->
+    <div class="content" id="users">
+        <h2>Users Management</h2>
+        <p>View, block, and manage all registered users.</p>
+
+        <div class="card">Total Users: 1,248</div>
+        <div class="card">Active Today: 842</div>
+    </div>
+
+    <!-- TRADES -->
+    <div class="content" id="trades">
+        <h2>Trades Monitor</h2>
+        <p>Live trading activity stream.</p>
+
+        <div class="card">BTC/USD: 45 trades/sec</div>
+        <div class="card">ETH/USD: 32 trades/sec</div>
+    </div>
+
+    <!-- RISK ENGINE -->
+    <div class="content" id="risk">
+        <h2>Risk Engine</h2>
+        <p>System risk evaluation metrics.</p>
+
+        <div class="card">Risk Level: LOW</div>
+        <div class="card">Exposure: 12%</div>
+    </div>
+
+    <!-- LOGS -->
+    <div class="content" id="logs">
+        <h2>System Logs</h2>
+        <p>Recent system activities.</p>
+
+        <div class="card">Login success - user123</div>
+        <div class="card">Trade executed - BTC</div>
+    </div>
+
+    <!-- ANALYTICS -->
+    <div class="content" id="analytics">
+        <h2>Analytics</h2>
+        <p>Performance and usage analytics.</p>
+
+        <div class="card">Growth: +18%</div>
+        <div class="card">Traffic: High</div>
+    </div>
+
+</div>
+
+<script src="js/admin-dashboard.js"></script>
 </body>
 </html>
