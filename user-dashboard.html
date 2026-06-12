@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Dashboard</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Meridian</h2>
+
+    <a href="#">Overview</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Markets</a>
+    <a href="#">Watchlist</a>
+    <a href="#">Settings</a>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <h1>Welcome User 👋</h1>
+
+    <div class="card-grid">
+
+        <div class="card">Portfolio Value<br><strong>$12,450</strong></div>
+        <div class="card">Today's P&L<br><strong>+2.4%</strong></div>
+        <div class="card">Active Trades<br><strong>8</strong></div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

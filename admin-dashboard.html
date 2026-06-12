@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="sidebar admin">
+
+    <h2>Admin Panel</h2>
+
+    <a href="#">Users</a>
+    <a href="#">Trades Monitor</a>
+    <a href="#">Risk Engine</a>
+    <a href="#">System Logs</a>
+    <a href="#">Analytics</a>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div class="main">
+
+    <h1>Admin Control Center ⚙️</h1>
+
+    <div class="card-grid">
+
+        <div class="card">Active Users<br><strong>1,248</strong></div>
+        <div class="card">System Latency<br><strong>0.31ms</strong></div>
+        <div class="card">Trades/sec<br><strong>4,820</strong></div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

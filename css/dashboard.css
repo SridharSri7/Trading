@@ -1,0 +1,66 @@
+body{
+    margin:0;
+    font-family:Inter, sans-serif;
+    background:#0f242d;
+    color:#fff;
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    height:100vh;
+    background:#101312;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    border-right:1px solid rgba(255,255,255,.08);
+}
+
+.sidebar h2{
+    margin-bottom:20px;
+}
+
+.sidebar a{
+    color:#9ea3a0;
+    text-decoration:none;
+    padding:10px;
+    border-radius:8px;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,.05);
+    color:#fff;
+}
+
+/* ADMIN THEME */
+.sidebar.admin{
+    border-right:1px solid rgba(103,154,217,.3);
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    padding:20px;
+    border-radius:16px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#679ad9;
+}
