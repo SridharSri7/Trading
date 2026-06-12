@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Grain + grid background -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+    
+<!-- NAV -->
+<header class="nav">
+  <a href="#" class="brand">
+    <span class="brand-mark">◐</span>
+    <span class="brand-name">Meridian</span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="platform.html">Platform</a>
+    <a href="services.html">Service</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="#" class="link-ghost">Sign in</a>
+    <a href="#" class="btn-primary">Open account →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">
+      <span class="dot"></span> Live · NYSE open · Vol -0.42%
+    </div>
+    <h1>
+      Trade the world<br/>
+      with <em>uncommon</em> clarity.
+    </h1>
+    <p class="lede">
+      Meridian is an investment terminal for the next generation of allocators.
+      Real-time markets, institutional execution, and research that actually reads
+      like research — all in one quiet, elegant surface.
+    </p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary lg">Start investing</a>
+      <a href="#" class="btn-ghost lg">View live demo →</a>
+    </div>
+    <div class="hero-meta">
+      <div><strong>$48.2B</strong><span>assets routed / yr</span></div>
+      <div><strong>0.3 bps</strong><span>avg. spread</span></div>
+      <div><strong>184</strong><span>global markets</span></div>
+    </div>
+  </div>
+
+<!-- Ticker card -->
+  <div class="hero-right">
+    <div class="card-glass terminal">
+      <div class="term-head">
+        <div class="term-tabs">
+          <span class="tab active">Watchlist</span>
+          <span class="tab">Portfolio</span>
+          <span class="tab">Orders</span>
+        </div>
+        <span class="term-time" id="termClock">--:--:--</span>
+      </div>
+
+      <div class="term-chart">
+        <svg viewBox="0 0 600 220" preserveAspectRatio="none" class="chart">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#c9ff5b" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#c9ff5b" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path id="chartArea" fill="url(#g1)"></path>
+          <path id="chartLine" fill="none" stroke="#c9ff5b" stroke-width="1.5"></path>
+        </svg>
+        <div class="chart-meta">
+          <div>
+            <span class="sym">SPX</span>
+            <span class="price" id="chartPrice">5,832.14</span>
+          </div>
+          <div class="delta up" id="chartDelta">+1.24%</div>
+        </div>
+      </div>
+
+      <ul class="ticker-list" id="tickerList"></ul>
+    </div>
+
+    <div class="floating-pill">
+      <span class="dot green"></span> Order filled · AAPL · 120 @ 232.18
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" id="markets">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- FEATURES -->
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Everything You Need<br>to Trade Successfully</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg></div>
+                    <h3>Real-Time Analytics</h3>
+                    <p>Get instant market insights with our advanced analytics engine processing millions of data points.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <h3>24/7 Trading</h3>
+                    <p>Trade anytime, anywhere with our always-on platform supporting global markets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <h3>Bank-Level Security</h3>
+                    <p>Your assets are protected with military-grade encryption and multi-factor authentication.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                    <h3>Multi-Asset Support</h3>
+                    <p>Trade stocks, crypto, forex, and commodities from a single unified platform.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+                    <h3>Instant Execution</h3>
+                    <p>Execute trades in milliseconds with our high-performance infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h3>Expert Community</h3>
+                    <p>Connect with successful traders and share strategies in our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ============= -->
+<!-- PLATFORM FEATURES -->
+<section class="platform-section" id="platform">
+
+  <div class="platform-header">
+    <span class="platform-kicker">The platform</span>
+    <h2>
+      Built like an institution.<br>
+      Felt like a private desk.
+    </h2>
+  </div>
+
+  <div class="platform-grid">
+
+    <article class="platform-card platform-card-large">
+      <div class="platform-icon">⟁</div>
+      <h3>Direct market access</h3>
+      <p>
+        Smart-order routing across 40+ venues with sub-millisecond execution
+        and transparent rebate pass-through.
+      </p>
+
+      <div class="platform-bars">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </article>
+
+    <article class="platform-card">
+      <div class="platform-icon">◇</div>
+      <h3>Multi-asset</h3>
+      <p>
+        Equities, options, futures, FX, fixed income and digital assets
+        in one collateralized account.
+      </p>
+    </article>
+
+    <article class="platform-card">
+      <div class="platform-icon">⌘</div>
+      <h3>Research that reads</h3>
+      <p>
+        Daily desk notes from senior analysts. No clickbait, no upsells —
+        just the trade.
+      </p>
+    </article>
+
+    <article class="platform-card platform-card-wide">
+
+      <div class="platform-icon">∿</div>
+
+      <h3>Quant tooling, without the PhD</h3>
+
+      <p>
+        Backtest, factor-screen and automate strategies with a notebook-style
+        editor. Bring your Python or use ours.
+      </p>
+
+      <!-- <pre class="platform-code">
+<span class="platform-key">strategy</span> <span class="platform-name">momentum_v2</span>:
+  <span class="platform-key">universe</span> = sp500.filter(mcap > <span class="platform-value">2e9</span>)
+  <span class="platform-key">signal</span>   = rsi(<span class="platform-value">14</span>) < <span class="platform-value">30</span>
+  <span class="platform-key">size</span>     = risk_parity(target=<span class="platform-value">0.12</span>)
+      </pre> -->
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ================ WHY CHOOSE US ================= -->
+<section class="why-section">
+
+    <div class="why-image">
+        <img src="images/trading-img.jpg" alt="">
+        
+        <div class="floating-stat stat-1">
+            <h3>$48B+</h3>
+            <span>Assets Traded</span>
+        </div>
+
+        <div class="floating-stat stat-2">
+            <h3>99.99%</h3>
+            <span>Platform Uptime</span>
+        </div>
+    </div>
+
+    <div class="why-content">
+
+        <span class="why-tag">
+            WHY CHOOSE US
+        </span>
+
+        <h2>
+            Built For Serious Investors
+            And Modern Traders
+        </h2>
+
+        <p>
+            Access institutional-grade trading tools,
+            intelligent analytics, and global markets
+            through a secure and powerful platform.
+        </p>
+
+        <div class="why-points">
+
+            <div class="why-item">
+                <h4>Institutional Infrastructure</h4>
+                <p>Enterprise-grade systems designed for reliability.</p>
+            </div>
+
+            <div class="why-item">
+                <h4>Ultra Fast Execution</h4>
+                <p>Execute trades with minimal latency.</p>
+            </div>
+
+            <div class="why-item">
+                <h4>Advanced Security</h4>
+                <p>Multi-layer protection and encrypted transactions.</p>
+            </div>
+
+            <div class="why-item">
+                <h4>Global Opportunities</h4>
+                <p>Trade across international markets.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MARKET RESEARCH HUB -->
+<section class="research-section">
+
+    <div class="research-header">
+
+        <span class="research-tag">
+            MARKET RESEARCH HUB
+        </span>
+
+        <h2>
+            Institutional Insights For
+            Smarter Investment Decisions
+        </h2>
+
+        <p>
+            Access expert analysis, market intelligence,
+            sector outlooks, and economic reports designed
+            to help investors navigate global markets.
+        </p>
+
+    </div>
+
+    <!-- Featured Report -->
+
+    <div class="research-featured">
+
+        <div class="research-featured-image">
+            <img src="images/trading-img.jpg" alt="">
+        </div>
+
+        <div class="research-featured-content">
+
+            <span class="research-category">
+                Weekly Market Outlook
+            </span>
+
+            <h3>
+                Global Markets Positioning
+                For The Next Quarter
+            </h3>
+
+            <p>
+                Explore emerging opportunities across equities,
+                fixed income, commodities, and digital assets
+                with our latest institutional market outlook.
+            </p>
+
+            <a href="#" class="research-btn">
+                Read Full Report →
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Research Cards -->
+
+    <div class="research-grid">
+
+        <article class="research-card">
+            <span>Sector Analysis</span>
+            <h4>Technology Stocks Outlook</h4>
+            <p>Growth trends, valuation metrics and future opportunities.</p>
+        </article>
+
+        <article class="research-card">
+            <span>Earnings Report</span>
+            <h4>Q2 Corporate Earnings Review</h4>
+            <p>Key earnings surprises and market reactions.</p>
+        </article>
+
+        <article class="research-card">
+            <span>Macro Economics</span>
+            <h4>Inflation & Interest Rates</h4>
+            <p>How monetary policy is shaping global markets.</p>
+        </article>
+
+        <article class="research-card">
+            <span>Commodities</span>
+            <h4>Gold & Energy Markets</h4>
+            <p>Supply-demand trends and price forecasts.</p>
+        </article>
+
+        <article class="research-card">
+            <span>Crypto Research</span>
+            <h4>Digital Asset Landscape</h4>
+            <p>Institutional adoption and blockchain developments.</p>
+        </article>
+
+        <article class="research-card">
+            <span>Trading Signals</span>
+            <h4>High Conviction Opportunities</h4>
+            <p>Technical and fundamental trade setups.</p>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-section">
+
+    <div class="hiw-header">
+        <span class="hiw-tag">How It Works</span>
+        <h2>
+            Start investing in minutes.<br>
+            Built for speed & simplicity.
+        </h2>
+        <p>
+            From account creation to executing trades — everything is designed
+            to be fast, transparent, and institutional-grade.
+        </p>
+    </div>
+
+    <div class="hiw-grid">
+
+        <div class="hiw-card">
+            <div class="hiw-icon">1</div>
+            <h3>Create Account</h3>
+            <p>Sign up in seconds using email or social login with secure onboarding.</p>
+        </div>
+
+        <div class="hiw-card">
+            <div class="hiw-icon">2</div>
+            <h3>Verify Identity</h3>
+            <p>Complete KYC verification to unlock global market access securely.</p>
+        </div>
+
+        <div class="hiw-card">
+            <div class="hiw-icon">3</div>
+            <h3>Fund Portfolio</h3>
+            <p>Add funds instantly using bank transfer, UPI, or supported wallets.</p>
+        </div>
+
+        <div class="hiw-card">
+            <div class="hiw-icon">4</div>
+            <h3>Start Trading</h3>
+            <p>Access markets, research tools, and execute trades in real time.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+
+    <div class="testimonials-header">
+
+        <span class="testimonials-tag">CLIENT INSIGHTS</span>
+
+        <h2>
+            What investors & analysts
+            are saying
+        </h2>
+
+        <p>
+            Real feedback from traders, portfolio managers,
+            and institutional users using the platform daily.
+        </p>
+
+    </div>
+
+    <div class="testimonials-layout">
+
+        <!-- FEATURED -->
+        <div class="testimonial-featured">
+
+            <div class="featured-person">
+
+                <img src="images/investor1.jpg" alt="Investor">
+
+                <div class="person-info">
+                    <span class="name">Arjun Mehta</span>
+                    <span class="role">Portfolio Manager · Hedge Fund</span>
+                </div>
+
+            </div>
+
+            <div class="quote-mark">“</div>
+
+            <p class="quote-text typing-text" data-text="
+                Meridian gives us execution clarity we usually only see in institutional trading desks. 
+                The research layer alone has changed how we allocate capital."></p>
+
+        </div>
+
+        <!-- FEED -->
+        <div class="testimonial-feed">
+
+            <div class="feed-item">
+                <img src="images/user1.jpg" />
+                <div>
+                    <p>Execution speed feels institutional-grade.</p>
+                    <span>Sarah L. · Equity Trader</span>
+                </div>
+            </div>
+
+            <div class="feed-item">
+                <img src="images/user2.jpg" />
+                <div>
+                    <p>Research quality is extremely professional.</p>
+                    <span>Michael R. · Analyst</span>
+                </div>
+            </div>
+
+            <div class="feed-item">
+                <img src="images/user3.jpg" />
+                <div>
+                    <p>Risk tools are surprisingly advanced.</p>
+                    <span>Daniel K. · Investor</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="ft-section">
+
+    <!-- TOP AREA -->
+    <div class="ft-top">
+
+        <!-- BRAND -->
+        <div class="ft-brand">
+
+            <div class="ft-logo">
+                ◐ Meridian
+            </div>
+
+            <p>
+                Institutional-grade trading and research platform
+                built for modern investors. Real-time data, deep analytics,
+                and execution clarity in one place.
+            </p>
+
+            <div class="ft-social">
+
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+                <a href="#">Discord</a>
+
+            </div>
+
+        </div>
+
+        <!-- LINKS -->
+        <div class="ft-col">
+            <h4>Platform</h4>
+            <a href="#">Trading</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Analytics</a>
+            <a href="#">API Access</a>
+        </div>
+
+        <div class="ft-col">
+            <h4>Research</h4>
+            <a href="#">Market Reports</a>
+            <a href="#">Earnings</a>
+            <a href="#">Macro Data</a>
+            <a href="#">Signals</a>
+        </div>
+
+        <div class="ft-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Security</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <div class="ft-news">
+
+            <h4>Market Intelligence</h4>
+
+            <p>
+                Get daily institutional research updates.
+            </p>
+
+            <div class="ft-input">
+                <input type="email" placeholder="Enter email">
+                <button>Subscribe</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="ft-stats">
+
+        <div>
+            <strong>184+</strong>
+            <span>Markets Covered</span>
+        </div>
+
+        <div>
+            <strong>$48B+</strong>
+            <span>Annual Volume</span>
+        </div>
+
+        <div>
+            <strong>0.3ms</strong>
+            <span>Execution Speed</span>
+        </div>
+
+        <div>
+            <strong>24/7</strong>
+            <span>Market Access</span>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="ft-bottom">
+
+        <p>© 2026 Meridian. All rights reserved.</p>
+
+        <div class="ft-legal">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="js/home.js"></script>
+
+</body>
+</html>
