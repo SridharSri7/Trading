@@ -943,3 +943,34 @@ body{
 input[type="range"]{
     width:100%;
 }
+
+
+/* ==================== */
+/* SIDEBAR */
+
+
+/* LOGOUT BUTTON */
+.sidebar button{
+    margin-top: auto;
+    margin: auto 18px 20px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar button:hover{
+    background: #ff4d4d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,77,77,.25);
+}
+
+.sidebar button:active{
+    transform: scale(.98);
+}
