@@ -88,119 +88,133 @@ a{color:inherit;text-decoration:none}
 =========================== */
 
 /* NAV */
+/* =========================
+   NAV BASE (DESKTOP)
+========================= */
+
 .nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding:14px 40px;
+  padding: 14px 24px;
 
-    background:rgba(10,12,12,.6);
-    backdrop-filter:blur(12px);
+  background: rgba(11, 18, 32, 0.85);
+  backdrop-filter: blur(12px);
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* LOGO */
-.logo{
-    width:34px;
-    height:34px;
-    object-fit:contain;
+/* BRAND */
+.brand{
+  display: flex;
+  align-items: center;
 }
 
-/* LINKS */
-.links{
-    display:flex;
-    gap:28px;
+.brand-logo{
+  width: 120px;
+  height: 40px;
+  object-fit: contain;
 }
 
-.links a{
-    color:#cfd3d0;
-    text-decoration:none;
-    font-size:14px;
+/* NAV LINKS (DESKTOP) */
+.nav-links{
+  display: flex;
+  gap: 28px;
+  align-items: center;
 }
 
-/* CTA BUTTONS (DESKTOP) */
-.cta{
-    display:flex;
-    gap:12px;
+.nav-links a{
+  font-size: 14px;
+  color: #9ea3a0;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/* BUTTONS */
-.btn{
-    padding:8px 14px;
-    border-radius:999px;
-    font-size:13px;
-    text-decoration:none;
-    border:1px solid transparent;
+.nav-links a:hover{
+  color: #fff;
 }
 
-.btn.primary{
-    background:#679ad9;
-    color:#000;
-    font-weight:600;
+/* =========================
+   HAMBURGER BUTTON
+========================= */
+
+.nav-toggle{
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
-.btn.ghost{
-    border:1px solid rgba(255,255,255,.2);
-    color:#fff;
+.nav-toggle span{
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
-/* ALWAYS HIDE MOBILE CTA ON DESKTOP */
-.mobile-cta{
-    display:none;
+/* =========================
+   MOBILE MENU
+========================= */
+
+@media (max-width: 768px){
+
+  /* SHOW HAMBURGER */
+  .nav-toggle{
+    display: flex;
+  }
+
+  /* HIDE DESKTOP LINKS */
+  .nav-links{
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+
+    background: rgba(11, 18, 32, 0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    padding: 18px;
+    gap: 16px;
+  }
+
+  /* ACTIVE STATE (JS CONTROLLED) */
+  .nav-links.active{
+    display: flex;
+  }
+
+  .nav-links a{
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .nav-links a:hover{
+    background: rgba(255,255,255,0.05);
+  }
 }
 
-/* TOGGLE */
-.toggle{
-    display:none;
-    font-size:26px;
-    cursor:pointer;
-    color:#fff;
-}
+/* =========================
+   SMALL MOBILE FIX
+========================= */
 
-/* MOBILE */
-@media(max-width:768px){
+@media (max-width: 480px){
 
-    .toggle{
-        display:block;
-    }
+  .nav{
+    padding: 12px 16px;
+  }
 
-    .cta{
-        display:none;
-    }
-
-    .links{
-        position:absolute;
-        top:60px;
-        left:0;
-        width:100%;
-
-        flex-direction:column;
-        gap:18px;
-
-        background:rgba(10,12,12,.95);
-        padding:20px 30px;
-
-        border-bottom:1px solid rgba(255,255,255,.08);
-
-        display:none;
-    }
-
-    .links.active{
-        display:flex;
-    }
-
-    .mobile-cta{
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-        margin-top:10px;
-    }
+  .brand-logo{
+    width: 100px;
+    height: 34px;
+  }
 }
 
 /* ================== HERO ==================== */
@@ -1574,4 +1588,247 @@ a{color:inherit;text-decoration:none}
         gap:10px;
         text-align:center;
     }
+}
+
+/* ========================== */
+/* ===================================
+   MOBILE OPTIMIZATION
+=================================== */
+
+@media (max-width:768px){
+
+  /* GLOBAL */
+  body{
+    font-size:14px;
+  }
+
+  section{
+    overflow:hidden;
+  }
+
+  /* NAV */
+  .nav{
+    padding:12px 18px;
+  }
+
+  .brand-logo{
+    width:95px;
+    height:auto;
+  }
+
+  /* HERO */
+  .about-hero{
+    min-height:100vh;
+    padding:100px 20px 60px;
+  }
+
+  .about-content{
+    width:100%;
+  }
+
+  .about-content h1{
+    font-size:42px;
+    line-height:1.1;
+    margin-bottom:16px;
+  }
+
+  .about-content p{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .about-actions{
+    flex-direction:column;
+    width:100%;
+    gap:12px;
+  }
+
+  .about-actions .btn{
+    width:100%;
+    text-align:center;
+    padding:14px;
+  }
+
+  .about-stats{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    margin-top:40px;
+  }
+
+  .stat{
+    padding:14px;
+    border-radius:14px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.06);
+  }
+
+  /* COMMON SECTIONS */
+  .strategies,
+  .mission-section,
+  .tech-section,
+  .exec-control,
+  .team-section{
+    padding:80px 20px;
+    margin:0;
+  }
+
+  /* HEADINGS */
+  .section-head h2,
+  .mission-left h2,
+  .tech-left h2,
+  .exec-header h2,
+  .team-head h2{
+    font-size:34px;
+    line-height:1.15;
+  }
+
+  /* STRATEGY CARDS */
+  .strat-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .strat{
+    padding:18px;
+  }
+
+  /* MISSION */
+  .mission-container{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .mission-pillars{
+    grid-template-columns:1fr;
+  }
+
+  .mission-card{
+    padding:22px;
+  }
+
+  /* TECHNOLOGY */
+  .tech-container{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .img-stack{
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .img-stack img{
+    position:static;
+    width:100%;
+    height:220px;
+  }
+
+  /* EXECUTION */
+  .exec-layout{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .exec-core img{
+    max-width:100%;
+  }
+
+  .exec-log{
+    text-align:center;
+  }
+
+  .node{
+    text-align:center;
+  }
+
+  /* TEAM */
+  .team-grid{
+    grid-template-columns:1fr;
+  }
+
+  .team-img{
+    height:260px;
+  }
+
+  /* FOOTER */
+  .ft-section{
+    padding:60px 20px 30px;
+  }
+
+  .ft-top{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .ft-stats{
+    grid-template-columns:1fr 1fr;
+    padding:20px;
+  }
+
+  .ft-input{
+    flex-direction:column;
+    border-radius:16px;
+  }
+
+  .ft-input input{
+    width:100%;
+  }
+
+  .ft-input button{
+    width:100%;
+  }
+
+  .ft-bottom{
+    flex-direction:column;
+    text-align:center;
+    gap:15px;
+  }
+
+  .ft-legal{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+}
+
+
+/* EXTRA SMALL PHONES */
+@media (max-width:480px){
+
+  .about-content h1{
+    font-size:34px;
+  }
+
+  .mission-left h2,
+  .tech-left h2,
+  .exec-header h2,
+  .team-head h2,
+  .section-head h2{
+    font-size:28px;
+  }
+
+  .stat strong{
+    font-size:24px;
+  }
+
+  .ft-stats{
+    grid-template-columns:1fr;
+  }
+
+  .team-img{
+    height:220px;
+  }
+
+  .img-stack img{
+    height:180px;
+  }
+}
+
+/*  */
+/* Prevent background scroll */
+body.menu-open{
+    overflow: hidden;
+    height: 100vh;
 }

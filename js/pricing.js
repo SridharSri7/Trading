@@ -1,8 +1,15 @@
-const toggle = document.getElementById("toggle");
-const links = document.getElementById("links");
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-    links.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+}
+
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
 });
 
 // =============== HERO SECTION ===============

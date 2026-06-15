@@ -1,0 +1,137 @@
+/* BODY */
+body{
+    margin:0;
+    font-family:Inter, sans-serif;
+    background:#0b1220;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* MAIN CONTAINER */
+.error-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* BACKGROUND GLOW */
+.glow-bg{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#7c3aed,transparent 70%);
+    filter:blur(80px);
+    opacity:.4;
+    animation:floatGlow 6s infinite ease-in-out;
+}
+
+@keyframes floatGlow{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(30px);}
+}
+
+/* GRID LINES */
+.grid-lines{
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    opacity:.2;
+}
+
+/* ERROR BOX */
+.error-box{
+    position:relative;
+    text-align:center;
+    padding:40px;
+    max-width:600px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+/* ERROR CODE */
+.error-code{
+    font-size:90px;
+    font-weight:800;
+    background:linear-gradient(90deg,#8b5cf6,#3b82f6,#22c55e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+}
+
+/* STATUS CARD */
+.status-card{
+    display:flex;
+    justify-content:space-between;
+    margin:25px 0;
+    padding:15px;
+    border-radius:14px;
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.status-item span{
+    display:block;
+    font-size:12px;
+    color:#aaa;
+}
+
+.status-item strong{
+    font-size:14px;
+}
+
+/* BUTTONS */
+.btn-group{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.btn{
+    padding:10px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.primary{
+    background:linear-gradient(90deg,#7c3aed,#3b82f6);
+    color:#fff;
+}
+
+.secondary{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.2);
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SCANNING TEXT */
+.scan-text{
+    margin-top:20px;
+    font-size:12px;
+    color:#22c55e;
+    letter-spacing:2px;
+    animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:.3;}
+}

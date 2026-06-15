@@ -1,3 +1,19 @@
+// ==== TOGGLER ====
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+
+    navLinks.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+}
+
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
+});
+
+// ==================
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
         if(entry.isIntersecting){

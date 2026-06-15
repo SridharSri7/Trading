@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dashboarderror.css">
+<title>Page Not Found</title>
+</head>
+<body>
+
+
+<div class="error-container">
+
+    <!-- BACKGROUND EFFECT -->
+    <div class="glow-bg"></div>
+    <div class="grid-lines"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="error-box">
+
+        <div class="error-code">
+            404
+        </div>
+
+        <h1>System Route Not Found</h1>
+
+        <p>
+            The requested module could not be located in the trading system.
+            It may have been moved, deleted, or never existed.
+        </p>
+
+        <!-- STATUS CARD -->
+        <div class="status-card">
+
+            <div class="status-item">
+                <span>Status</span>
+                <strong>FAILED</strong>
+            </div>
+
+            <div class="status-item">
+                <span>Server</span>
+                <strong>ONLINE</strong>
+            </div>
+
+            <div class="status-item">
+                <span>Error Code</span>
+                <strong>ERR_ROUTE_404</strong>
+            </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="btn-group">
+
+            <a class="btn primary" onclick="goDashboard()" >Go Dashboard</a>
+            <button onclick="history.back()" class="btn secondary">Go Back</button>
+
+        </div>
+
+        <!-- SCANNING TEXT -->
+        <div class="scan-text">
+            SCANNING SYSTEM ROUTES...
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function goDashboard(){
+
+    // Get logged-in role
+    const role = localStorage.getItem("userRole");
+
+    if(role === "admin"){
+        window.location.href = "admin-dashboard.html";
+    }
+    else if(role === "user"){
+        window.location.href = "user-dashboard.html";
+    }
+    else{
+        window.location.href = "login.html";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -16,7 +16,7 @@
     <a href="#" onclick="showSection('dashboard')">Dashboard</a>
     <a href="#" onclick="showSection('users')">Users</a>
     <a href="#" onclick="showSection('trades')">Trades Monitor</a>
-    <a href="#" onclick="showSection('risk')">Risk Engine</a>
+    <!-- <a href="#" onclick="showSection('risk')">Risk Engine</a> -->
     <a href="#" onclick="showSection('logs')">System Logs</a>
     <a href="#" onclick="showSection('analytics')">Analytics</a>
 
@@ -149,50 +149,540 @@
 
 </div>
 
-    <!-- USERS -->
-    <div class="content" id="users">
-        <h2>Users Management</h2>
-        <p>View, block, and manage all registered users.</p>
+<!-- USERS -->
+<div class="content" id="users">
 
-        <div class="card">Total Users: 1,248</div>
-        <div class="card">Active Today: 842</div>
+    <div class="users-header">
+        <h2 class="animated-title">
+            USER MANAGEMENT CENTER
+        </h2>
+
+        <p>
+            Monitor registrations, account activity, verification status,
+            and user engagement across the platform.
+        </p>
     </div>
 
-    <!-- TRADES -->
-    <div class="content" id="trades">
-        <h2>Trades Monitor</h2>
-        <p>Live trading activity stream.</p>
+    <div class="card-grid">
 
-        <div class="card">BTC/USD: 45 trades/sec</div>
-        <div class="card">ETH/USD: 32 trades/sec</div>
+        <div class="card stat-card">
+            <h3>Total Users</h3>
+            <strong>12,458</strong>
+        </div>
+
+        <div class="card stat-card">
+            <h3>Active Today</h3>
+            <strong>8,294</strong>
+        </div>
+
+        <div class="card stat-card">
+            <h3>Verified Accounts</h3>
+            <strong>10,912</strong>
+        </div>
+
+        <div class="card stat-card">
+            <h3>New Registrations</h3>
+            <strong>156</strong>
+        </div>
+
     </div>
 
-    <!-- RISK ENGINE -->
-    <div class="content" id="risk">
-        <h2>Risk Engine</h2>
-        <p>System risk evaluation metrics.</p>
+    <div class="section-box">
 
-        <div class="card">Risk Level: LOW</div>
-        <div class="card">Exposure: 12%</div>
+        <div class="section-header">
+            <h3>Recent Users</h3>
+            <button class="view-btn">View All</button>
+        </div>
+
+        <table class="trade-table">
+
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>#U1024</td>
+                    <td>John Smith</td>
+                    <td>john@gmail.com</td>
+                    <td>User</td>
+                    <td><span class="status active">Active</span></td>
+                </tr>
+
+                <tr>
+                    <td>#U1025</td>
+                    <td>Sarah Lee</td>
+                    <td>sarah@gmail.com</td>
+                    <td>User</td>
+                    <td><span class="status verified">Verified</span></td>
+                </tr>
+
+                <tr>
+                    <td>#U1026</td>
+                    <td>Michael</td>
+                    <td>michael@gmail.com</td>
+                    <td>User</td>
+                    <td><span class="status active">Active</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
     </div>
 
-    <!-- LOGS -->
-    <div class="content" id="logs">
-        <h2>System Logs</h2>
-        <p>Recent system activities.</p>
+</div>
 
-        <div class="card">Login success - user123</div>
-        <div class="card">Trade executed - BTC</div>
+
+<!-- TRADES -->
+<div class="content" id="trades">
+
+    <div class="trade-banner">
+        <div class="trade-ticker">
+            LIVE MARKET MONITOR • BTC/USD • ETH/USD • SOL/USD • HIGH FREQUENCY TRADING • MARKET ACTIVITY • RISK DETECTION •
+        </div>
     </div>
 
-    <!-- ANALYTICS -->
-    <div class="content" id="analytics">
-        <h2>Analytics</h2>
-        <p>Performance and usage analytics.</p>
+    <div class="card-grid">
 
-        <div class="card">Growth: +18%</div>
-        <div class="card">Traffic: High</div>
+        <div class="card">
+            <h3>Total Trades Today</h3>
+            <strong>48,291</strong>
+        </div>
+
+        <div class="card">
+            <h3>Trading Volume</h3>
+            <strong>$12.8M</strong>
+        </div>
+
+        <div class="card">
+            <h3>Buy Orders</h3>
+            <strong>27,104</strong>
+        </div>
+
+        <div class="card">
+            <h3>Sell Orders</h3>
+            <strong>21,187</strong>
+        </div>
+
     </div>
+
+    <div class="section-box">
+
+        <h2>⚡ Live Trade Feed</h2>
+
+        <table class="trade-table">
+
+            <thead>
+                <tr>
+                    <th>Trade ID</th>
+                    <th>Asset</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>TX45821</td>
+                    <td>BTC/USD</td>
+                    <td class="buy">BUY</td>
+                    <td>0.45 BTC</td>
+                    <td>$64,250</td>
+                    <td>Completed</td>
+                </tr>
+
+                <tr>
+                    <td>TX45822</td>
+                    <td>ETH/USD</td>
+                    <td class="sell">SELL</td>
+                    <td>12 ETH</td>
+                    <td>$3,115</td>
+                    <td>Completed</td>
+                </tr>
+
+                <tr>
+                    <td>TX45823</td>
+                    <td>SOL/USD</td>
+                    <td class="buy">BUY</td>
+                    <td>150 SOL</td>
+                    <td>$142</td>
+                    <td>Pending</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="grid-2">
+
+        <div class="section-box">
+
+            <h2>📈 Market Activity</h2>
+
+            <div class="metric">
+                <span>BTC Volume</span>
+                <div class="progress">
+                    <div class="progress-fill" style="width:85%"></div>
+                </div>
+            </div>
+
+            <div class="metric">
+                <span>ETH Volume</span>
+                <div class="progress">
+                    <div class="progress-fill" style="width:70%"></div>
+                </div>
+            </div>
+
+            <div class="metric">
+                <span>SOL Volume</span>
+                <div class="progress">
+                    <div class="progress-fill" style="width:55%"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section-box">
+
+            <h2>🚨 Trade Alerts</h2>
+
+            <div class="alert-item">
+                Large BTC transaction detected
+            </div>
+
+            <div class="alert-item">
+                Unusual ETH volume spike
+            </div>
+
+            <div class="alert-item">
+                High-frequency trading activity detected
+            </div>
+
+            <div class="alert-item">
+                Market volatility increased by 12%
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- RISK ENGINE -->
+<div class="content" id="logs">
+
+    <div class="logs-header">
+        <div class="logs-ticker">
+            SYSTEM MONITORING • LOGIN EVENTS • SERVER HEALTH • SECURITY ALERTS • API REQUESTS • DATABASE ACTIVITY •
+        </div>
+    </div>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>Total Events Today</h3>
+            <strong>15,284</strong>
+        </div>
+
+        <div class="card">
+            <h3>API Requests</h3>
+            <strong>48,912</strong>
+        </div>
+
+        <div class="card">
+            <h3>Security Alerts</h3>
+            <strong>23</strong>
+        </div>
+
+        <div class="card">
+            <h3>Failed Logins</h3>
+            <strong>41</strong>
+        </div>
+
+    </div>
+
+    <!-- RECENT LOGS -->
+
+    <div class="section-box">
+
+        <h2>📜 Recent System Events</h2>
+
+        <div class="log-list">
+
+            <div class="log-item success">
+                <span class="time">10:21:45</span>
+                User Login Successful - user1024@gmail.com
+            </div>
+
+            <div class="log-item warning">
+                <span class="time">10:18:20</span>
+                Multiple Login Attempts Detected
+            </div>
+
+            <div class="log-item info">
+                <span class="time">10:12:09</span>
+                New Trading Session Started
+            </div>
+
+            <div class="log-item error">
+                <span class="time">10:05:33</span>
+                API Timeout Detected on Market Feed
+            </div>
+
+            <div class="log-item success">
+                <span class="time">09:58:11</span>
+                Database Backup Completed
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SERVER + SECURITY -->
+
+    <div class="grid-2">
+
+        <div class="section-box">
+
+            <h2>🖥️ Server Status</h2>
+
+            <div class="server-status">
+
+                <div class="status-row">
+                    <span>Trading Engine</span>
+                    <span class="online">ONLINE</span>
+                </div>
+
+                <div class="status-row">
+                    <span>Database Server</span>
+                    <span class="online">ONLINE</span>
+                </div>
+
+                <div class="status-row">
+                    <span>API Gateway</span>
+                    <span class="warning-text">HIGH LOAD</span>
+                </div>
+
+                <div class="status-row">
+                    <span>Backup Service</span>
+                    <span class="online">ONLINE</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section-box">
+
+            <h2>🔒 Security Center</h2>
+
+            <div class="security-item">
+                ✔ Firewall Active
+            </div>
+
+            <div class="security-item">
+                ✔ DDoS Protection Enabled
+            </div>
+
+            <div class="security-item">
+                ⚠ Suspicious Login Attempts
+            </div>
+
+            <div class="security-item">
+                ✔ SSL Certificate Valid
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ANALYTICS -->
+<div class="content" id="analytics">
+
+    <!-- ANALYTICS BANNER -->
+    <div class="analytics-header">
+        <div class="analytics-ticker">
+            ANALYTICS CENTER • PLATFORM GROWTH • REVENUE TRACKING • USER INSIGHTS • MARKET PERFORMANCE • TRENDING ASSETS •
+        </div>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="card-grid">
+
+        <div class="card analytics-card">
+            <h3>Total Revenue</h3>
+            <strong>$1.84M</strong>
+            <span class="positive">+18.2%</span>
+        </div>
+
+        <div class="card analytics-card">
+            <h3>Monthly Growth</h3>
+            <strong>26.4%</strong>
+            <span class="positive">+4.8%</span>
+        </div>
+
+        <div class="card analytics-card">
+            <h3>New Users</h3>
+            <strong>8,421</strong>
+            <span class="positive">+12.1%</span>
+        </div>
+
+        <div class="card analytics-card">
+            <h3>Trade Volume</h3>
+            <strong>$12.8M</strong>
+            <span class="positive">+7.6%</span>
+        </div>
+
+    </div>
+
+    <!-- PERFORMANCE -->
+    <div class="section-box">
+
+        <h2>📈 Platform Performance</h2>
+
+        <div class="performance-grid">
+
+            <div class="metric-box">
+                <span>Trading Activity</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width:92%"></div>
+                </div>
+
+                <small>92%</small>
+            </div>
+
+            <div class="metric-box">
+                <span>User Engagement</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width:84%"></div>
+                </div>
+
+                <small>84%</small>
+            </div>
+
+            <div class="metric-box">
+                <span>Platform Stability</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width:98%"></div>
+                </div>
+
+                <small>98%</small>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- USER + MARKET ANALYTICS -->
+
+    <div class="grid-2">
+
+        <div class="section-box">
+
+            <h2>👥 User Analytics</h2>
+
+            <div class="analytics-item">
+                Daily Active Users
+                <span>8,294</span>
+            </div>
+
+            <div class="analytics-item">
+                Weekly Active Users
+                <span>42,817</span>
+            </div>
+
+            <div class="analytics-item">
+                Premium Accounts
+                <span>3,184</span>
+            </div>
+
+            <div class="analytics-item">
+                Verified Accounts
+                <span>10,912</span>
+            </div>
+
+        </div>
+
+        <div class="section-box">
+
+            <h2>🔥 Trending Assets</h2>
+
+            <div class="asset-item">
+                BTC/USD
+                <span class="positive">+8.2%</span>
+            </div>
+
+            <div class="asset-item">
+                ETH/USD
+                <span class="positive">+5.4%</span>
+            </div>
+
+            <div class="asset-item">
+                SOL/USD
+                <span class="positive">+12.1%</span>
+            </div>
+
+            <div class="asset-item">
+                XRP/USD
+                <span class="positive">+4.8%</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- REGIONAL ACTIVITY -->
+
+    <div class="section-box">
+
+        <h2>🌎 Regional Trading Activity</h2>
+
+        <div class="region-grid">
+
+            <div class="region-card">
+                <h4>North America</h4>
+                <strong>42%</strong>
+            </div>
+
+            <div class="region-card">
+                <h4>Europe</h4>
+                <strong>28%</strong>
+            </div>
+
+            <div class="region-card">
+                <h4>Asia</h4>
+                <strong>21%</strong>
+            </div>
+
+            <div class="region-card">
+                <h4>Others</h4>
+                <strong>9%</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!--  -->
 
 </div>
 
