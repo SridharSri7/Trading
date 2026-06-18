@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/services.css">
     <title>Document</title>
 </head>
@@ -32,6 +34,19 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+<!-- CTA -->
+  <div class="nav-cta">
+    <a class="link-ghost" onclick="openPopup()">Sign in</a>
+    <a class="btn-primary" onclick="openPopup()">Open account →</a>
+  </div>
+
+<!-- MOBILE CTA -->
+  <!-- LOGIN INSIDE MENU -->
+    <div class="menu-auth">
+      
+      <a class="btn-primary" onclick="openPopup()">Login →</a>
+    
+    </div>
 
 <!-- MOBILE TOGGLER -->
   <div class="nav-toggle" onclick="toggleMenu()">
@@ -513,10 +528,10 @@
 
             <div class="ft-social">
 
-                <a href="error.html">LinkedIn</a>
-                <a href="error.html">Twitter</a>
-                <a href="error.html">YouTube</a>
-                <a href="error.html">Discord</a>
+                <a onclick="window.location.href='error.html'"> <i class="fa-brands fa-instagram"></i> </a>
+                <a onclick="window.location.href='error.html'"> <i class="fa-brands fa-linkedin-in"></i> </a>
+                <a onclick="window.location.href='error.html'"> <i class="fa-brands fa-x-twitter"></i> </a>
+                <a onclick="window.location.href='error.html'"> <i class="fa-brands fa-youtube"></i> </a>
 
             </div>
 
@@ -604,6 +619,163 @@
     </div>
 
 </footer>
+
+
+<!-- ================= AUTH POPUP ================= -->
+
+<div id="popupOverlay" class="popup-overlay">
+
+  <div class="popup-container">
+
+    <!-- CLOSE BUTTON -->
+    <span class="popup-close" onclick="closePopup()">
+      &times;
+    </span>
+
+    <!-- LEFT SIDE -->
+    <div class="popup-left">
+
+      <h1>Welcome 👋</h1>
+
+      <p>
+        Access your dashboard, analytics,
+        projects and management system.
+      </p>
+
+      <div class="popup-feature-list">
+
+        <div class="popup-feature-card">
+          📊 Real-time Analytics
+        </div>
+
+        <div class="popup-feature-card">
+          ⚡ Fast Dashboard
+        </div>
+
+        <div class="popup-feature-card">
+          🔒 Secure Authentication
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="popup-right">
+
+      <!-- LOGIN -->
+      <div id="loginForm" class="popup-login-box">
+
+        <h2>Login</h2>
+
+        <span>
+          Access your account
+        </span>
+
+        <input
+          id="loginEmail"
+          type="email"
+          placeholder="Enter Email"
+        >
+
+        <div class="password-wrap">
+            <input id="loginPassword" type="password" placeholder="Enter Password">
+            <span class="eye-btn" onclick="togglePassword('loginPassword',this)">👁</span>
+        </div>
+        <small id="passwordHint" class="hint-text"> </small>
+
+        <!-- FORGOT PASSWORD -->
+        <p class="popup-forgot">
+          <a href="error.html" onclick="forgotPassword()">Forgot Password?</a>
+        </p>
+
+        <select id="loginRole">
+
+          <option value="user">
+            User
+          </option>
+
+          <option value="admin">
+            Admin
+          </option>
+
+        </select>
+
+        <button onclick="login()">
+          Login
+        </button>
+
+        <p class="popup-switch">
+
+          Don't have an account?
+
+          <span onclick="showSignup()">
+            Signup
+          </span>
+
+        </p>
+
+      </div>
+
+      <!-- SIGNUP -->
+       <!-- ================= SIGNUP FORM ================= -->
+<div id="signupForm" class="popup-signup-box hidden">
+
+  <h2 class="signup-h2">Create Account</h2>
+  <span>Create your new account</span>
+
+  <!-- ROLE SELECTION (AVATAR STYLE) -->
+  <div class="role-selector">
+
+    <div id="userRoleCard" class="role-card active" onclick="selectRole('user')">
+      <div class="avatar">👤</div>
+      <p>User</p>
+    </div>
+
+    <div id="adminRoleCard" class="role-card" onclick="selectRole('admin')">
+      <div class="avatar">🛡️</div>
+      <p>Admin</p>
+    </div>
+
+  </div>
+
+  <!-- INPUTS -->
+  <input id="signupName" type="text" placeholder="Enter Name">
+  <input id="signupEmail" type="email" placeholder="Enter Email">
+  <div class="password-wrap">
+    <input id="signupPassword" type="password" placeholder="Enter Password">
+    <span class="eye-btn" onclick="togglePassword('signupPassword',this)">👁</span>
+  </div>
+  <div class="password-wrap">
+    <input id="signupConfirmPassword" type="password" placeholder="Confirm Password">
+    <span class="eye-btn" onclick="togglePassword('signupConfirmPassword',this)">👁</span>
+  </div>
+
+  <!-- HIDDEN ROLE -->
+  <select id="signupRole" style="display:none;">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <!-- ERROR MESSAGE -->
+  <p id="signupError" class="error-text"></p>
+
+  <!-- BUTTON -->
+  <button onclick="signup()">Create Account</button>
+
+  <!-- SWITCH -->
+  <p class="popup-switch signup-login">
+    Already have an account?
+    <span onclick="showLogin()">Login</span>
+  </p>
+
+</div>
+
+    </div>
+
+  </div>
+
+</div>
 
 <script src="js/services.js"></script>
 </body>

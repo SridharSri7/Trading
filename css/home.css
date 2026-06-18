@@ -2897,11 +2897,7 @@ h1 em{font-style:italic;color:var(--accent)}
 }
 
 /*  */
-/* Prevent background scroll */
-body.menu-open{
-    overflow: hidden;
-    height: 100vh;
-}
+
 
 /* ===========================
    PLATFORM SECTION - MOBILE FIX

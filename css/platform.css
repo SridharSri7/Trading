@@ -1828,7 +1828,682 @@ a{color:inherit;text-decoration:none}
 
 /*  */
 /* Prevent background scroll */
-body.menu-open{
+/* body.menu-open{
     overflow: hidden;
     height: 100vh;
+} */
+
+/* =========================
+   NAVBAR BASE (DESKTOP)
+========================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 24px;
+
+  background: rgba(11, 18, 32, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* LOGO */
+.brand-logo {
+  width: 110px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* LINKS (DESKTOP) */
+.nav-links {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #9ea3a0;
+  font-size: 14px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* CTA (DESKTOP) */
+.nav-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* MOBILE AUTH (hidden on desktop) */
+.menu-auth {
+  display: none;
+}
+
+/* HAMBURGER */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+@media (max-width: 768px) {
+
+  .nav {
+    padding: 12px 16px;
+  }
+
+  /* SHOW HAMBURGER */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* FULL SCREEN DROPDOWN */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+
+    background: rgba(11, 18, 32, 0.98);
+    backdrop-filter: blur(12px);
+
+    padding: 16px;
+    gap: 12px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ACTIVE MENU (JS CONTROLLED) */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* HIDE DESKTOP CTA */
+  .nav-cta {
+    display: none;
+  }
+
+  /* SHOW LOGIN INSIDE MENU */
+  .menu-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .brand-logo {
+    width: 95px;
+    height: 32px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   BODY LOCK (IMPORTANT)
+========================= */
+
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+/* ===================== LOGIN AND SIGNUP ===================== */
+/* ==========================
+   POPUP OVERLAY
+========================== */
+.popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(10px);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-overlay.active{
+    display:flex;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+.popup-container{
+    width:1100px;
+    max-width:95%;
+    min-height:650px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    background:rgba(15,36,45,.95);
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+    overflow:hidden;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.5);
+
+    animation:popupShow .5s ease;
+
+    /* ------ */
+
+    min-height:unset;      /* REMOVE fixed height behavior */
+    max-height:90vh;       /* prevents overflow */
+    
+
+}
+
+@keyframes popupShow{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* ==========================
+   CLOSE BTN
+========================== */
+.popup-close{
+    position:absolute;
+    top:25px;
+    right:30px;
+    font-size:32px;
+    cursor:pointer;
+    color:#fff;
+    z-index:100;
+}
+
+/* ==========================
+   LEFT SIDE
+========================== */
+.popup-left{
+    padding:70px 50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(103,154,217,.18),
+        rgba(255,255,255,.03)
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.popup-left h1{
+    font-size:58px;
+    line-height:1.05;
+    margin-bottom:20px;
+    font-family:var(--serif);
+}
+
+.popup-left p{
+    color:#b7c0c5;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.popup-feature-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.popup-feature-card{
+    padding:16px 18px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+
+    transform:translateX(-30px);
+    opacity:0;
+
+    animation:featureSlide .7s forwards;
+}
+
+.popup-feature-card:nth-child(2){
+    animation-delay:.15s;
+}
+.popup-feature-card:nth-child(3){
+    animation-delay:.3s;
+}
+
+@keyframes featureSlide{
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* ==========================
+   RIGHT SIDE
+========================== */
+.popup-right{
+    padding:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ==========================
+   LOGIN & SIGNUP
+========================== */
+.popup-login-box,
+.popup-signup-box{
+    width:100%;
+}
+
+.popup-login-box h2,
+.popup-signup-box h2{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.popup-login-box span,
+.popup-signup-box span{
+    color:#9ea3a0;
+    display:block;
+    margin-bottom:25px;
+}
+
+/* ==========================
+   INPUTS
+========================== */
+.popup-login-box input,
+.popup-signup-box input,
+.popup-login-box select{
+    width:100%;
+    height:54px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+
+    padding:0 18px;
+    margin-bottom:16px;
+
+    color:#fff;
+}
+
+.popup-login-box input:focus,
+.popup-signup-box input:focus{
+    outline:none;
+    border-color:#679ad9;
+}
+
+/* ==========================
+   PASSWORD WRAPPER
+========================== */
+.password-wrap{
+    position:relative;
+}
+
+.password-wrap input{
+    padding-right:55px;
+}
+
+.eye-btn{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:18px;
+    color:#aaa;
+}
+
+/* ==========================
+   PASSWORD RULE
+========================== */
+.hint-text{
+    display:block;
+    margin-top:-8px;
+    margin-bottom:14px;
+    font-size:12px;
+}
+
+.valid{
+    color:#7ee787;
+}
+
+.invalid{
+    color:#ff6b6b;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+.popup-login-box button,
+.popup-signup-box button{
+    width:100%;
+    height:54px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#679ad9;
+    color:#fff;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.popup-login-box button:hover,
+.popup-signup-box button:hover{
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   SWITCH
+========================== */
+.popup-switch{
+    margin-top:20px;
+    text-align:center;
+    color:#aaa;
+}
+
+.popup-switch span{
+    color:#679ad9;
+    cursor:pointer;
+}
+
+/* ==========================
+   ROLE SELECTOR
+========================== */
+.role-selector{
+    display:flex;
+    gap:16px;
+    margin-bottom:22px;
+}
+
+.role-card{
+    flex:1;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.08);
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.role-card.active{
+    border-color:#679ad9;
+    background:rgba(103,154,217,.15);
+}
+
+.avatar{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.hidden{
+    display:none;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .popup-container{
+        grid-template-columns:1fr;
+    }
+
+    .popup-left{
+        display:none;
+    }
+
+    .popup-right{
+        padding:35px;
+    }
+}
+
+/* ============  */
+/* ==========================
+   FIX SIGNUP FULL HEIGHT ISSUE
+========================== */
+
+.popup-signup-box{
+    max-height:520px;          /* controls overflow */
+    overflow-y:auto;           /* scroll instead of stretching */
+    padding-right:10px;        /* avoid scrollbar overlap */
+}
+
+/* optional: nicer scrollbar */
+.popup-signup-box::-webkit-scrollbar{
+    width:4px;
+}
+
+.popup-signup-box::-webkit-scrollbar-thumb{
+    background:rgba(103,154,217,.4);
+    border-radius:10px;
+}
+/* ........... */
+.popup-right{
+    max-height:650px;
+    overflow:hidden;
+    align-items:center;
+}
+
+/* =========================
+   MOBILE POPUP FIX
+========================= */
+
+@media (max-width:768px){
+
+  .popup-overlay{
+    padding:15px;
+    overflow-y:auto;
+  }
+
+  .popup-container{
+    width:100%;
+    max-width:380px;
+    margin:auto;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* Hide left panel on mobile */
+  .popup-left{
+    display:none;
+  }
+
+  .popup-right{
+    width:100%;
+    padding:20px;
+  }
+
+  .popup-login-box,
+  .popup-signup-box{
+    width:100%;
+  }
+
+  .popup-login-box h2,
+  .popup-signup-box h2{
+    font-size:26px;
+    margin-bottom:6px;
+  }
+
+  .popup-login-box span,
+  .popup-signup-box span{
+    font-size:13px;
+  }
+
+  /* INPUTS */
+  .popup-login-box input,
+  .popup-signup-box input,
+  #loginRole,
+  #signupRole{
+    width:100%;
+    max-width:100%;
+    height:48px;
+    padding:0 14px;
+    border-radius:12px;
+    font-size:14px;
+    box-sizing:border-box;
+  }
+
+  /* PASSWORD FIELD */
+  .password-wrap{
+    width:100%;
+    max-width:100%;
+  }
+
+  .password-wrap input{
+    width:100%;
+    padding-right:45px;
+  }
+
+  /* ROLE CARDS */
+  .role-selector{
+    display:flex;
+    gap:10px;
+    margin:15px 0;
+  }
+
+  .role-card{
+    flex:1;
+    padding:12px;
+    border-radius:14px;
+  }
+
+  .avatar{
+    font-size:24px;
+  }
+
+  .role-card p{
+    font-size:13px;
+    margin-top:6px;
+  }
+
+  /* BUTTON */
+  .popup-login-box button,
+  .popup-signup-box button{
+    width:100%;
+    height:48px;
+    border-radius:12px;
+    font-size:15px;
+  }
+
+  .popup-switch{
+    text-align:center;
+    font-size:13px;
+  }
+
+  .popup-close{
+    top:12px;
+    right:15px;
+    font-size:28px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+
+@media (max-width:480px){
+
+  .popup-container{
+    max-width:340px;
+  }
+
+  .popup-right{
+    padding:16px;
+  }
+
+  .popup-login-box h2,
+  .popup-signup-box h2{
+    font-size:22px;
+  }
+
+  .role-selector{
+    flex-direction:column;
+  }
+
+  .role-card{
+    width:100%;
+  }
+}
+
+/* =========================
+   DROPDOWN FIX
+========================= */
+
+#loginRole,
+#signupRole{
+  background:#162b35;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.15);
+  appearance:auto;
+  display:block;
+}
+
+#loginRole option,
+#signupRole option{
+  background:#162b35;
+  color:#fff;
 }
